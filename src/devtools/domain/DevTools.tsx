@@ -1,33 +1,16 @@
 import { devTools } from "../devtools";
-import { Checkbox, Select, Confirmation, DialogRoot } from "../ui";
+import { GroupSection } from "../ui";
 
 export function DevTools() {
+  const groups = devTools.internalApi.getGroups();
   return (
     /* @ts-ignore */
     <Fragment>
       <h1>DevTools</h1>
       <div>
-        <div>
-          {devTools.internalApi.getGroups().map((group) => {
-            return (
-              <div>
-                <h2>{group.label}</h2>
-                {group.items.map((item) => {
-                  switch (item.type) {
-                    case "checkbox":
-                      return <Checkbox {...item} />;
-                    case "select":
-                      return <Select {...item} />;
-                    case "confirmation":
-                      return <Confirmation {...item} />;
-                    default:
-                      return null;
-                  }
-                })}
-              </div>
-            );
-          })}
-        </div>
+        {groups.map((group) => (
+          <GroupSection group={group} key={group.label} />
+        ))}
       </div>
       {/* @ts-ignore */}
     </Fragment>

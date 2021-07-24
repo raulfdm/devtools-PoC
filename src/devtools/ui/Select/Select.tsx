@@ -1,10 +1,11 @@
 import { devTools } from "../../devtools";
 import { ISelectItemGroup } from "../../types";
 
+import { GroupItemSection } from "../GroupItemSection";
+
 export function Select({ options, label, initial, id }: ISelectItemGroup) {
   return (
-    <div>
-      <label>{label}</label>
+    <GroupItemSection label={label}>
       <select
         value={initial}
         onChange={(e) => {
@@ -18,6 +19,6 @@ export function Select({ options, label, initial, id }: ISelectItemGroup) {
           </option>
         ))}
       </select>
-    </div>
+    </GroupItemSection>
   );
 }
