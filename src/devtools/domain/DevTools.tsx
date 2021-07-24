@@ -1,5 +1,5 @@
 import { devTools } from "../devtools";
-import { Checkbox, Select } from "../ui";
+import { Checkbox, Select, Confirmation, DialogRoot } from "../ui";
 
 export function DevTools() {
   return (
@@ -17,6 +17,8 @@ export function DevTools() {
                       return <Checkbox {...item} />;
                     case "select":
                       return <Select {...item} />;
+                    case "confirmation":
+                      return <Confirmation {...item} />;
                     default:
                       return null;
                   }
@@ -26,6 +28,7 @@ export function DevTools() {
           })}
         </div>
       </div>
+      <DialogRoot />
     </div>
   );
 }

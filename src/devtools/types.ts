@@ -5,8 +5,6 @@ export interface IGroupItemBase {
   label: string;
 }
 
-export type IGroupItem = ICheckboxItemGroup | ISelectItemGroup;
-
 export interface ICheckboxItemGroup extends IGroupItemBase {
   initial: boolean;
   type: "checkbox";
@@ -17,6 +15,15 @@ export interface ISelectItemGroup extends IGroupItemBase {
   type: "select";
   options: { label: string; value: string }[];
 }
+export interface IConfirmItemGroup extends IGroupItemBase {
+  type: "confirmation";
+  description: string;
+}
+
+export type IGroupItem =
+  | ICheckboxItemGroup
+  | ISelectItemGroup
+  | IConfirmItemGroup;
 
 export interface IGroup {
   label: string;

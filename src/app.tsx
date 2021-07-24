@@ -31,6 +31,18 @@ devtools.addGroup({
   ],
 });
 
+devtools.addGroup({
+  label: "Misc.",
+  items: [
+    {
+      type: "confirmation",
+      description: "Are you sure you want to do this?",
+      id: "clear_storage",
+      label: "Clear Storage",
+    },
+  ],
+});
+
 devtools.subscribe((id: string, value: any) => {
   console.log("CHANGED", id, value);
 });
