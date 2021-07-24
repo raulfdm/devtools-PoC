@@ -35,7 +35,9 @@ function devToolsFactory() {
      * Need to save initial value of all items
      */
     for (const item of group.items) {
-      __store[item.id] = item.initial;
+      if ("initial" in item) {
+        __store[item.id] = item.initial;
+      }
     }
 
     __groups.push(group);

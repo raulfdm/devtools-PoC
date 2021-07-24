@@ -5,6 +5,7 @@ function install() {
   // add dev tools UI to the page
 
   const devToolsRoot = document.createElement("div");
+  devToolsRoot.id = "devtools";
 
   document.body.appendChild(devToolsRoot);
 

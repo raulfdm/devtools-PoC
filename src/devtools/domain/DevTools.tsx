@@ -3,7 +3,8 @@ import { Checkbox, Select, Confirmation, DialogRoot } from "../ui";
 
 export function DevTools() {
   return (
-    <div>
+    /* @ts-ignore */
+    <Fragment>
       <h1>DevTools</h1>
       <div>
         <div>
@@ -29,6 +30,7 @@ export function DevTools() {
         </div>
       </div>
       <DialogRoot />
-    </div>
+      {/* @ts-ignore */}
+    </Fragment>
   );
 }
