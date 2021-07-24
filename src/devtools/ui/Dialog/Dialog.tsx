@@ -1,6 +1,7 @@
 import { createPortal } from "preact/compat";
 import styles from "./Dialog.module.scss";
 import classNames from "classnames";
+import { useDialog } from "../../hooks/useDialog";
 
 interface IDialogProps {
   description: string;
@@ -39,7 +40,8 @@ export function Dialog({ onConfirm, description, onCancel }: IDialogProps) {
   );
 }
 
-export function DialogRoot({ isOpen }: { isOpen: boolean }) {
+export function DialogRoot() {
+  const { isOpen } = useDialog();
   return (
     <div
       id={ROOT_ID}

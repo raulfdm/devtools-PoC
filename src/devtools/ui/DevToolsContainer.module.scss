@@ -1,0 +1,17 @@
+.root {
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90vh;
+  background-color: rgb(0, 0, 0);
+
+  p,
+  span,
+  h1,
+  h2,
+  h3 {
+    color: #fff;
+  }
+}

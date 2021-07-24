@@ -24,7 +24,6 @@ export function DialogProvider({ children }: { children: ComponentChildren }) {
       }}
     >
       {children}
-      <DialogRoot isOpen={isOpen} />
     </dialogContext.Provider>
   );
 
