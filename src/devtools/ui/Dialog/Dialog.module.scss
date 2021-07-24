@@ -1,0 +1,44 @@
+.dialogRoot {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.confirmationWrapper {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.actionsWrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.actionButton {
+  border: 0;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.25rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  &:first-child {
+    margin-right: 0.5rem;
+  }
+}
+
+.confirmButton {
+  background-color: #00d1b2;
+}

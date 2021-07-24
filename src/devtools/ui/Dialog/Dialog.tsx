@@ -1,4 +1,6 @@
 import { createPortal } from "preact/compat";
+import styles from "./Dialog.module.scss";
+import classNames from "classnames";
 
 interface IDialogProps {
   description: string;
@@ -8,7 +10,7 @@ interface IDialogProps {
 
 const ROOT_ID = "dialog";
 
-export function Dialog({ onConfirm, description }: IDialogProps) {
+export function Dialog({ onConfirm, description, onCancel }: IDialogProps) {
   const container = document.getElementById(ROOT_ID);
 
   if (container === null) {
@@ -18,20 +20,25 @@ export function Dialog({ onConfirm, description }: IDialogProps) {
   }
 
   return createPortal(
-    /* @ts-ignore */
-    <Fragment>
-      <h2>Confirmation</h2>
+    <div className={styles.confirmationWrapper}>
+      <h2 className={styles.title}>Confirmation</h2>
       <p>{description}</p>
-      <div>
-        <button>Cancel</button>
-        <button>Confirm</button>
+      <div className={styles.actionsWrapper}>
+        <button className={classNames(styles.actionButton)} onClick={onCancel}>
+          Cancel
+        </button>
+        <button
+          className={classNames(styles.actionButton, styles.confirmButton)}
+          onClick={onConfirm}
+        >
+          Confirm
+        </button>
       </div>
-      {/* @ts-ignore */}
-    </Fragment>,
+    </div>,
     container
   );
 }
 
 export function DialogRoot() {
-  return <div id={ROOT_ID} />;
+  return <div id={ROOT_ID} className={styles.dialogRoot} />;
 }
