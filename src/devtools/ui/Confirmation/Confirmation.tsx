@@ -19,7 +19,9 @@ export function Confirmation({ description, label }: IConfirmItemGroup) {
           onConfirm={() => {
             setIsPortalOpen(false);
           }}
-          onCancel={() => {}}
+          onCancel={() => {
+            setIsPortalOpen(false);
+          }}
           description={description}
         />
       )}
