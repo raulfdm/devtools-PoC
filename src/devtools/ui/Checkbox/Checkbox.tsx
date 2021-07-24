@@ -1,5 +1,6 @@
-import { devTools } from "../devtools";
-import { ICheckboxItemGroup } from "../types";
+import { devTools } from "../../devtools";
+import { ICheckboxItemGroup } from "../../types";
+import styles from "./Checkbox.module.scss";
 
 export function Checkbox({ id, label, initial }: ICheckboxItemGroup) {
   return (

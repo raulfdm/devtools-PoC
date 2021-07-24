@@ -1,5 +1,5 @@
-import { devTools } from "../devtools";
-import { ISelectItemGroup } from "../types";
+import { devTools } from "../../devtools";
+import { ISelectItemGroup } from "../../types";
 
 export function Select({ options, label, initial, id }: ISelectItemGroup) {
   return (
