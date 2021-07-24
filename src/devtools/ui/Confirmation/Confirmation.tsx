@@ -3,6 +3,8 @@ import { useDialog } from "../../hooks/useDialog";
 import { IConfirmItemGroup } from "../../types";
 import { Dialog } from "../Dialog";
 
+import { GroupItemSection } from "../GroupItemSection";
+
 export function Confirmation({ description, label, id }: IConfirmItemGroup) {
   const { closeDialog, isOpen, openDialog } = useDialog();
 
@@ -12,8 +14,7 @@ export function Confirmation({ description, label, id }: IConfirmItemGroup) {
   }
 
   return (
-    <div>
-      <h3>{label}</h3>
+    <GroupItemSection label={label}>
       <button onClick={openDialog}>Confirm</button>
       {isOpen && (
         <Dialog
@@ -22,6 +23,6 @@ export function Confirmation({ description, label, id }: IConfirmItemGroup) {
           description={description}
         />
       )}
-    </div>
+    </GroupItemSection>
   );
 }

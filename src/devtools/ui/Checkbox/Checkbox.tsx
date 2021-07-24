@@ -2,10 +2,11 @@ import { devTools } from "../../devtools";
 import { ICheckboxItemGroup } from "../../types";
 import styles from "./Checkbox.module.scss";
 
+import { GroupItemSection } from "../GroupItemSection";
+
 export function Checkbox({ id, label, initial }: ICheckboxItemGroup) {
   return (
-    <div>
-      <label>{label}</label>
+    <GroupItemSection label={label}>
       <input
         type="checkbox"
         checked={initial}
@@ -14,6 +15,6 @@ export function Checkbox({ id, label, initial }: ICheckboxItemGroup) {
           devTools.internalApi.notify(id, nextState);
         }}
       />
-    </div>
+    </GroupItemSection>
   );
 }
