@@ -39,6 +39,11 @@ export function Dialog({ onConfirm, description, onCancel }: IDialogProps) {
   );
 }
 
-export function DialogRoot() {
-  return <div id={ROOT_ID} className={styles.dialogRoot} />;
+export function DialogRoot({ isOpen }: { isOpen: boolean }) {
+  return (
+    <div
+      id={ROOT_ID}
+      className={classNames(styles.dialogRoot, isOpen && styles.dialogRootOpen)}
+    />
+  );
 }

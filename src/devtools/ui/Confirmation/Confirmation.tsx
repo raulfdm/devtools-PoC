@@ -1,26 +1,24 @@
-import { useState } from "preact/hooks";
+import { devTools } from "../../devtools";
+import { useDialog } from "../../hooks/useDialog";
 import { IConfirmItemGroup } from "../../types";
 
 import { Dialog } from "../Dialog";
 
-export function Confirmation({ description, label }: IConfirmItemGroup) {
-  const [isPortalOpen, setIsPortalOpen] = useState(false);
-
-  function handleClick() {
-    setIsPortalOpen(!isPortalOpen);
-  }
+export function Confirmation({ description, label, id }: IConfirmItemGroup) {
+  const { closeDialog, isOpen, openDialog } = useDialog();
 
   return (
     <div>
       <h3>{label}</h3>
-      <button onClick={handleClick}>Create Portal</button>
-      {isPortalOpen && (
+      <button onClick={openDialog}>Confirm</button>
+      {isOpen && (
         <Dialog
           onConfirm={() => {
-            setIsPortalOpen(false);
+            devTools.internalApi.notify(id, true);
+            closeDialog();
           }}
           onCancel={() => {
-            setIsPortalOpen(false);
+            closeDialog();
           }}
           description={description}
         />

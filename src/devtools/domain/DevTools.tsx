@@ -29,7 +29,6 @@ export function DevTools() {
           })}
         </div>
       </div>
-      <DialogRoot />
       {/* @ts-ignore */}
     </Fragment>
   );
