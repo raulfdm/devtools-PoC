@@ -1,4 +1,4 @@
-import { IGroup, IGroups, IStore, ISubscription } from "./types";
+import type { IGroup, IGroups, IStore, ISubscription } from "./types";
 
 function devToolsFactory() {
   const __subscribers = new Set<ISubscription>();
@@ -6,7 +6,7 @@ function devToolsFactory() {
   let isInitialized = false;
   const __store: IStore = {};
 
-  const publicApi = { addGroup, subscribe, load, checkStore: getStore };
+  const publicApi = { addGroup, subscribe, load, getStore };
 
   const internalApi = {
     notify,
@@ -46,7 +46,7 @@ function devToolsFactory() {
   function subscribe(callback: ISubscription) {
     __subscribers.add(callback);
 
-    return () => {
+    return function unsubscribe() {
       __subscribers.delete(callback);
     };
   }
