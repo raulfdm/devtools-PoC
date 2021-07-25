@@ -17,7 +17,7 @@
 }
 
 .confirmationWrapper {
-  background-color: #fff;
+  background-color: #272727;
   padding: 1rem;
   border-radius: 0.25rem;
 }
@@ -38,11 +38,13 @@
   border-radius: 0.25rem;
   margin-top: 1rem;
   cursor: pointer;
+  font-weight: bold;
   &:first-child {
     margin-right: 0.5rem;
   }
 }
 
 .confirmButton {
-  background-color: #00d1b2;
+  background-color: #4600be;
+  color: white;
 }
